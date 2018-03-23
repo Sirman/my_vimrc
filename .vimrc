@@ -3,19 +3,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set nu
-"set cursorline
-set cursorcolumn
 set hlsearch
 set nofoldenable
 set linespace=-1
-
-set foldmethod=indent   "设置折叠方式
-au BufWinLeave * silent mkview  "保存文件的折叠状态
-nnoremap <space> za     "用空格来切换折叠
-"set foldmethod=syntax  
-"set smartindent
-"set autoindent
-
 
  let mapleader=";"
  nnoremap <leader>lw <C-W>l
@@ -33,32 +23,22 @@ nnoremap <space> za     "用空格来切换折叠
 
 syntax on
 syntax enable
+
 set nocompatible  
-"set background=dark
-"set background=light
-"colorscheme solarized
-"colorscheme molokai
-
-
-filetype on
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ternjs/tern_for_vim'
-Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'            "文件树插件
-Plugin 'Xuyuanp/nerdtree-git-plugin'    "显示文件的Git增删状态
 Plugin 'kien/ctrlp.vim'             "全局搜索
 Plugin 'Lokaltog/powerline',{'rtp': 'powerline/binding/vim/'}   "状态栏插件
 Plugin 'Raimondi/delimitMate'            "括号 引号匹配
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'css_color.vim'
+Plugin 'mattn/emmet-vim'
 call vundle#end()     
-Bundle 'Valloric/YouCompleteMe'
-"Bundle 'vim-indent-guides'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tomasr/molokai'
-Bundle 'css_color.vim'
-Bundle 'mattn/emmet-vim'
+filetype on
 
 
 
@@ -110,6 +90,13 @@ Bundle 'mattn/emmet-vim'
   let g:ycm_seed_identifiers_with_syntax = 1
   let g:ycm_confirm_extra_conf=0
   let g:ycm_key_invoke_completion = '<C-/>'
+  let g:ycm_semantic_triggers = {'c' : ['->', '    ', '.', ' ', '(', '[', '&'],'cpp,objcpp' : ['->', '.', ' ', '(', '[', '&', '::'],
+  \     'perl' : ['->', '::', ' '],
+  \     'php' : ['->', '::', '.'],
+  \     'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
+  \     'ruby' : ['.', '::'],
+  \     'lua' : ['.', ':']
+  \}
 
  """"""""""""""""""""""""""""
  "vim-indent-guides setting"
