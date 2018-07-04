@@ -37,7 +37,7 @@ syntax on
 syntax enable
 set nocompatible  
 "colorscheme molokai
-colorscheme monokai
+"colorscheme monokai
 "colorscheme greens
 "colorscheme desert
 
@@ -45,7 +45,7 @@ colorscheme monokai
 filetype on
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'  "status bar
 Plugin 'flazz/vim-colorschemes'
@@ -159,6 +159,14 @@ let g:ycm_semantic_triggers = {'c' : ['->', '    ', '.', ' ', '(', '[', '&'],'cp
 "     exec "!gcc % -o %<"
 "     exec "! ./%<"
 " endfunc
+
+ """""""""""""""""""""""""
+ " template loader setting
+ """"""""""""""""""""""""""
+let g:template_load = 1
+let g:T_AUTHOR = "Zhp"
+let g:T_AUTHOR_EMAIL = "18511771015@163.com"
+let g:T_DATE_FORMAT = "%c"
 
 
 
